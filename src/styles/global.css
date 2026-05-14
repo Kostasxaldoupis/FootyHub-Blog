@@ -173,88 +173,9 @@ h1 {
 
 .score-divider {
   color: #52525b;
-  font-weight: 600;
+  font-weight: 0;
   font-size: 0.9rem;
   padding: 0 0.25rem;
-}
-
-/* Tag Bar Styles */
-.tag-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.tag {
-  display: inline-block;
-  padding: 0.3rem 0.8rem;
-  background: #1e293b;
-  color: #94a3b8;
-  text-decoration: none;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  transition: all 0.2s ease;
-  border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.tag:hover {
-  background: #334155;
-  color: #93c5fd;
-}
-
-.tag.active {
-  background: #3b82f6;
-  color: white;
-  border-color: #3b82f6;
-}
-
-.filter-info {
-  background: #1e293b;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  font-size: 0.85rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.clear-filter {
-  color: #60a5fa;
-  text-decoration: none;
-  font-size: 0.8rem;
-}
-
-.clear-filter:hover {
-  color: #93c5fd;
-  text-decoration: underline;
-}
-
-/* Add tags to article cards */
-.article-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-top: 0.5rem;
-}
-
-.article-tag {
-  font-size: 0.65rem;
-  padding: 0.15rem 0.5rem;
-  background: rgba(59, 130, 246, 0.15);
-  color: #93c5fd;
-  border-radius: 12px;
-  text-decoration: none;
-}
-
-.article-tag:hover {
-  background: rgba(59, 130, 246, 0.3);
-  color: #60a5fa;
 }
 
 @keyframes pulse {

@@ -1,117 +1,126 @@
 ---
-// List your articles here - newest first
-const articles = [
-  { 
-    slug: "intro", 
-    title: "Introduction", 
-    date: "2026-05-13" 
+import "../styles/global.css";
+
+interface Article {
+  slug: string;
+  title: string;
+  date: string;
+  author?: string;
+  pinned?: boolean; // Add this for pinned articles
+  tags?: string[]; // to search/filter
+}
+
+// List articles here - newest first
+const articles: Article[] = [
+  {
+    slug: "intro",
+    title: "Introduction",
+    date: "2026-05-13",
+    pinned: true,
+  },
+  {
+    slug: "test2",
+    title: "Test2",
+    date: "2026-05-14",
+  },
+  {
+    slug: "test",
+    title: "Test",
+    date: "2026-05-13",
   },
 ];
 
-// Sort by date (newest first)
-const sortedArticles = articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+// Get all unique tags
+const allTags: string[] = [...new Set(articles.flatMap(article => article.tags || []))].sort();
 
-// Format date nicely
-function formatDate(dateString) {
+
+// Get current tag from URL (for filtering)
+const currentTag: string | null = Astro.url.searchParams.get('tag');
+
+
+// Filter articles by tag if one is selected
+let filteredArticles = [...articles];
+if (currentTag) {
+  filteredArticles = filteredArticles.filter((article: Article) => 
+    article.tags?.includes(currentTag)
+  );
+}
+
+// Sort: pinned first, then by date
+const sortedArticles = filteredArticles.sort((a: Article, b: Article) => {
+  if (a.pinned && !b.pinned) return -1;
+  if (!a.pinned && b.pinned) return 1;
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
+
+// Format date
+function formatDate(dateString: string): string {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Football Blog</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a1928;		
-            color: #e2e8f0;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            color: #94a3b8;
-            margin-bottom: 3rem;
-            border-left: 3px solid #3b82f6;
-            padding-left: 1rem;
-        }
-
-        .articles {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .article-card {
-            background: rgba(30, 41, 59, 0.5);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        .article-card:hover {
-            background: rgba(30, 41, 59, 0.7);
-            border-color: #3b82f6;
-        }
-
-        .article-card a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .article-card a:hover {
-            color: #93c5fd;
-        }
-
-        .date {
-            color: #94a3b8;
-            font-size: 0.85rem;
-        }
-    </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1> <span style="color: #fbbf24;">⚽</span> Football Blog</h1>
-        <div class="subtitle">Football news, Match analysis & Opinions</div>
-        
+      <h1>⚽ Football Blog</h1>
+      <div class="subtitle">
+        Match recaps from the top 5 leagues + other leagues around the world
+      </div>
+
+      <!-- Tag Filter Bar -->
+      <div class="tag-bar">
+        <a href="/" class={`tag ${!currentTag ? "active" : ""}`}> All Posts </a>
+        {
+          allTags.map((tag) => (
+            <a
+              href={`/?tag=${tag}`}
+              class={`tag ${currentTag === tag ? "active" : ""}`}
+            >
+              #{tag}
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- Show current filter indicator -->
+      {
+        currentTag && (
+          <div class="filter-info">
+            Showing posts tagged: <strong>#{currentTag}</strong>
+            <a href="/" class="clear-filter">
+              ✕ Clear filter
+            </a>
+          </div>
+        )
+      }
+
         <div class="articles">
-            {sortedArticles.map(article => (
-                <div class="article-card">
-                    <a href={`/articles/${article.slug}`}>{article.title}</a>
-                    <div class="date">{formatDate(article.date)}</div>
+        {sortedArticles.map((article) => (
+            <div class={`article-card ${article.pinned ? 'pinned' : ''}`}>
+            {article.pinned && <div class="pinned-badge">📌 PINNED</div>}
+            <a href={`/articles/${article.slug}`}>{article.title}</a>
+            <div class="date">{formatDate(article.date)}</div>
+            {article.tags && article.tags.length > 0 && (
+                <div class="article-tags">
+                {article.tags.map(tag => (
+                    <a href={`/?tag=${tag}`} class="article-tag">#{tag}</a>
+                ))}
                 </div>
-            ))}
+            )}
+            </div>
+        ))}
         </div>
     </div>
-</body>
+  </body>
 </html>

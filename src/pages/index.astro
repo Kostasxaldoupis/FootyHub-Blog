@@ -5,6 +5,7 @@ interface Article {
   slug: string;
   title: string;
   date: string;
+  description: string;
   author?: string;
   pinned?: boolean; // Add this for pinned articles
   tags?: string[]; // to search/filter
@@ -16,16 +17,13 @@ const articles: Article[] = [
     slug: "intro",
     title: "Introduction",
     date: "2026-05-13",
+    description: "Introduction",
     pinned: true,
-  },
-  {
-    slug: "test2",
-    title: "Test2",
-    date: "2026-05-14",
   },
   {
     slug: "test",
     title: "Test",
+    description: "My first footbal artcle",
     date: "2026-05-13",
   },
 ];
@@ -78,7 +76,7 @@ function formatDate(dateString: string): string {
         Match recaps from the top 5 leagues + other leagues around the world
       </div>
 
-      <!-- Tag Filter Bar -->
+      <!-- Tag Filter Bar
       <div class="tag-bar">
         <a href="/" class={`tag ${!currentTag ? "active" : ""}`}> All Posts </a>
         {
@@ -91,7 +89,7 @@ function formatDate(dateString: string): string {
             </a>
           ))
         }
-      </div>
+      </div> -->
 
       <!-- Show current filter indicator -->
       {

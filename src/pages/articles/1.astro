@@ -1,0 +1,185 @@
+---
+// main imports
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import MatchCard from "../../components/React/MatchCard";
+import '../../styles/global.css';
+
+// La Liga match
+import LaLigaLogo from "../../../public/competitions/LaLigaLogo.svg";
+import RealMadridLogo from '../../../public/teams/real-madrid.svg'
+import OviedoLogo from "../../../public/teams/oviedo.svg";
+
+// swiss super league
+import SwissLeagueLogo from "../../../public/competitions/swissleague.svg";
+import ThunLogo from "../../../public/teams/fc-thun-logo.svg";
+import OpponentLogo from "../../../public/teams/Young-Boys.svg";
+
+// belgium cup
+import BelgianCupLogo from "../../../public/competitions/Belgium-Cup.svg";
+import UnionLogo from "../../../public/teams/union-saint-gilloise.svg";
+import AnderlechtLogo from "../../../public/teams/anderlecht.svg";
+
+// danish cup
+import DanishCupLogo from "../../../public/competitions/DBU_Pokalen.svg";
+import MidtjyllandLogo from "../../../public/teams/Midtjylland.svg";
+import CopenhagenLogo from "../../../public/teams/FC-Copenhagen-1992.svg";
+
+// swedish cup
+import SwedishLeagueLogo from "../../../public/competitions/Svenska_Cupen_logo.svg";
+import MjallbyLogo from "../../../public/teams/Mjallby.svg";
+import HammarbyLogo from "../../../public/teams/hammarby.svg";
+---
+
+<ArticleLayout
+  title="Superb European Football Roundup - May 14, 2026"
+  date="May 14, 2026"
+  author="Your Name"
+  tags={["roundup", "laliga", "switzerland", "belgium", "denmark", "sweden"]}
+>
+  <p>
+    A wild night of European football with shocks, blowouts, and cup finals
+    across the continent!
+  </p>
+
+  <hr />
+  <!-- 1. REAL MADRID vs OVIEDO PREVIEW -->
+  <h2>🇪🇸 La Liga Preview: Real Madrid vs Real Oviedo</h2>
+  <MatchCard
+    client:load
+    homeTeam="Real Madrid"
+    awayTeam="Real Oviedo"
+    homeScore={0}
+    awayScore={0}
+    competition="La Liga - Matchday 36"
+    competitionLogo={LaLigaLogo?.src || ""}
+    status="UPCOMING"
+    homeLogo={RealMadridLogo?.src || ""}
+    awayLogo={OviedoLogo?.src || ""}
+  />
+  <p>
+    Real Madrid host Oviedo at the Bernabéu looking to keep their title hopes
+    alive. The newly promoted visitors are fighting relegation but face an
+    uphill battle against the Galácticos.
+  </p>
+  <p>
+    <strong>Prediction:</strong> Real Madrid 3-0 | <strong>Key Player:</strong> Jude
+    Bellingham
+  </p>
+
+  <hr />
+
+  <!-- 2. SWISS SUPER LEAGUE: THUN CRUSHED 3-8 -->
+  <h2>🇨🇭 Swiss Super League: Champions Thun Humiliated 3-8</h2>
+  <MatchCard
+    client:load
+    homeTeam="FC Thun"
+    awayTeam="Young Boys"
+    homeScore={3}
+    awayScore={8}
+    competition="Swiss Super League"
+    competitionLogo={SwissLeagueLogo?.src || ""}
+    status="FT"
+    homeLogo={ThunLogo?.src || ""}
+    awayLogo={OpponentLogo?.src || ""}
+  />
+  <p>
+    What a disaster for the newly crowned champions! Thun's defense completely
+    collapsed in a shocking 3-8 loss. The 8 goals conceded is their worst
+    defensive performance in over a decade.
+  </p>
+  <ul>
+    <li>❌ 8 goals conceded at home</li>
+    <li>❌ Champions' celebration hangover?</li>
+    <li>❌ Biggest loss in club history</li>
+  </ul>
+
+  <hr />
+
+  <!-- 3. BELGIAN CUP FINAL: Union SG WIN -->
+  <h2>🇧🇪 Belgian Cup Final: Union Saint-Gilloise Triumph Over Anderlecht</h2>
+  <MatchCard
+    client:load
+    homeTeam="Union SG"
+    awayTeam="Anderlecht"
+    homeScore={3}
+    awayScore={1}
+    competition="Belgian Cup - Final"
+    competitionLogo={BelgianCupLogo?.src || ""}
+    status="AET"
+    homeLogo={UnionLogo?.src || ""}
+    awayLogo={AnderlechtLogo?.src || ""}
+  />
+  <p>
+    Union Saint-Gilloise lift the Belgian Cup after a hard-fought 2-1 victory
+    over rivals Anderlecht. The final was a tense affair with Union's
+    never-say-die attitude paying off once again.
+  </p>
+  <p><strong>🏆 Trophy #2 for Union this season!</strong></p>
+
+  <hr />
+
+  <!-- 4. DANISH CUP FINAL: Midtjylland Deny Copenhagen -->
+  <h2>
+    🇩🇰 DBU Pokalen Final: Midtjylland Capitalize on Copenhagen's Disastrous
+    Season
+  </h2>
+  <MatchCard
+    client:load
+    homeTeam="FC Copenhagen"
+    awayTeam="FC Midtjylland"
+    homeScore={0}
+    awayScore={1}
+    competition="DBU Pokalen - Final"
+    competitionLogo={DanishCupLogo?.src || ""}
+    status="FT"
+    homeLogo={CopenhagenLogo?.src || ""}
+    awayLogo={MidtjyllandLogo?.src || ""}
+  />
+  <p>
+    FC Copenhagen's nightmare season continues! After failing to win the league,
+    they've now lost the cup final to Midtjylland. A trophyless campaign for the
+    Danish giants - their worst in recent memory.
+  </p>
+  <ul>
+    <li>❌ 0 domestic trophies for Copenhagen</li>
+    <li>✅ Midtjylland claim silverware</li>
+    <li>⚠️ Crisis talks expected at Copenhagen</li>
+  </ul>
+
+  <hr />
+
+  <!-- 5. SWEDISH UNDERDOGS: Mjällby Double Over Hammarby -->
+  <h2>
+    &#127480;&#127466; Svenska Cupen: Underdogs Mjällby Complete Double Over Hammarby in Stockholm
+  </h2>
+  <MatchCard
+    client:load
+    homeTeam="Mjällby"
+    awayTeam="Hammarby"
+    homeScore={2}
+    awayScore={1}
+    competition="Svenska Cupen"
+    competitionLogo={SwedishLeagueLogo?.src || ""}
+    status="FT"
+    homeLogo={MjallbyLogo?.src || ""}
+    awayLogo={HammarbyLogo?.src || ""}
+  />
+  <p>
+    Huge upset in Stockholm! Mjällby, the pre-season underdogs, have done the
+    double over Hammarby with a stunning 2-1 away victory. The small-town club
+    continues to punch above their weight while the home fans are left stunned.
+  </p>
+  <ul>
+    <li>✅ Mjällby win both fixtures this season</li>
+    <li>⭐ Fairytale season for the underdogs</li>
+    <li>😡 Hammarby fans demand answers</li>
+  </ul>
+
+  <hr />
+
+  <h3>📅 What a day of Football!</h3>
+  <p>
+    Cup finals, giant killings, and absolute chaos across Europe. More coverage
+    coming soon!
+  </p>
+</ArticleLayout>

@@ -1,0 +1,190 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import MatchCard from "../../../src/components/React/MatchCard";
+import "../../styles/global.css";
+
+// Logos
+import WorldCupLogo from "../../../public/World-Cup/World-Cup.svg";
+
+import MexicoLogo from "../../../public/World-Cup/Mexico.svg";
+import SouthAfricaLogo from "../../../public/World-Cup/south-africa.svg";
+
+import BrazilLogo from "../../../public/World-Cup/Brazil.svg";
+import MoroccoLogo from "../../../public/World-Cup/Morocco.svg";
+
+import NetherlandsLogo from "../../../public/World-Cup/Netherlands.svg";
+import JapanLogo from "../../../public/World-Cup/Japan.svg";
+
+import FranceLogo from "../../../public/World-Cup/France.svg";
+import SenegalLogo from "../../../public/World-Cup/Senegal.svg";
+---
+
+<ArticleLayout
+  title="World Cup Preview MD1 & My Predictions - 5/6/2026"
+  date="June 5, 2026"
+  author="Konstantinos Chaldoupis"
+  tags={["WorldCup", "Predictions"]}
+>
+  <p>
+    The 2026 World Cup is just around the corner, and the excitement is
+    palpable! With 48 teams set to compete across North America, this tournament
+    promises to be one of the most thrilling in history. As we gear up for the
+    kickoff, let's take a look at some of the key matchups and my predictions
+    for how things will unfold.
+  </p>
+
+  <h2>Key Matchups to Watch in Matchday 1</h2>
+  <p>
+    A rematch of the 2010 opening match happens again as Mexico faces South
+    Africa this time around in Mexico City Stadium hoping to get the full 3
+    points this time.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Mexico"
+    awayTeam="South Africa"
+    homeScore={0}
+    awayScore={0}
+    competition="Group Stage - Group A"
+    competitionLogo={WorldCupLogo.src}
+    status="UPCOMING"
+    homeLogo={MexicoLogo.src}
+    awayLogo={SouthAfricaLogo.src}
+    kickoffTime="2026-06-11T22:00:00+03:00"
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    One more exciting matchup to look forward to is the clash between Brazil and
+    Morocco in Group C as two of the best teams in each confederation play each
+    other that might decide first place and runner up of this group.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Brazil"
+    awayTeam="Morocco"
+    homeScore={0}
+    awayScore={0}
+    competition="Group Stage - Group C"
+    competitionLogo={WorldCupLogo.src}
+    status="UPCOMING"
+    homeLogo={BrazilLogo.src}
+    awayLogo={MoroccoLogo.src}
+    kickoffTime="2026-06-14T01:00:00+03:00"
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    Another exciting matchup is the clash between the Netherlands and Japan in
+    Group F with both teams having met once before in the 2010 World Cup where
+    Netherlands clinched on the 3 points thanks to a goal from Wesley Sneijder
+    and an assist from Robin van Persie.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Netherlands"
+    awayTeam="Japan"
+    homeScore={0}
+    awayScore={0}
+    competition="Group Stage - Group F"
+    competitionLogo={WorldCupLogo.src}
+    status="UPCOMING"
+    homeLogo={NetherlandsLogo.src}
+    awayLogo={JapanLogo.src}
+    kickoffTime="2026-06-14T23:00:00+03:00"
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    A battle of former colonies is on as France takes on Senegal. The meeting
+    carries deep historical weight, with many of France's own players having
+    family ties to Senegal. On the pitch, it's a clash of generations — European
+    efficiency versus African flair — both fighting for pride and progression.
+  </p>
+  <MatchCard
+    client:load
+    homeTeam="France"
+    awayTeam="Senegal"
+    homeScore={0}
+    awayScore={0}
+    competition="Group Stage - Group I"
+    competitionLogo={WorldCupLogo.src}
+    status="UPCOMING"
+    homeLogo={FranceLogo.src}
+    awayLogo={SenegalLogo.src}
+    kickoffTime="2026-06-16T22:00:00+03:00"
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    These are just a few of the many exciting matchups to look forward to in the
+    2026 World Cup. With so much talent on display and the stakes higher than
+    ever, it's anyone's guess who will come out on top. I can't wait to see how
+    it all unfolds!
+  </p>
+
+  <h2>My Predictions</h2>
+
+  <MatchCard
+    client:load
+    homeTeam="Mexico"
+    awayTeam="South Africa"
+    homeScore={2}
+    awayScore={0}
+    competition="Group Stage - Group A"
+    competitionLogo={WorldCupLogo.src}
+    status="PREDICTION"
+    homeLogo={MexicoLogo.src}
+    awayLogo={SouthAfricaLogo.src}
+  />
+
+  <MatchCard
+    client:load
+    homeTeam="Brazil"
+    awayTeam="Morocco"
+    homeScore={1}
+    awayScore={1}
+    competition="Group Stage - Group C"
+    competitionLogo={WorldCupLogo.src}
+    status="PREDICTION"
+    homeLogo={BrazilLogo.src}
+    awayLogo={MoroccoLogo.src}
+  />
+
+  <MatchCard
+    client:load
+    homeTeam="Netherlands"
+    awayTeam="Japan"
+    homeScore={0}
+    awayScore={0}
+    competition="Group Stage - Group F"
+    competitionLogo={WorldCupLogo.src}
+    status="PREDICTION"
+    homeLogo={NetherlandsLogo.src}
+    awayLogo={JapanLogo.src}
+  />
+
+  <MatchCard
+    client:load
+    homeTeam="France"
+    awayTeam="Senegal"
+    homeScore={2}
+    awayScore={0}
+    competition="Group Stage - Group I"
+    competitionLogo={WorldCupLogo.src}
+    status="PREDICTION"
+    homeLogo={FranceLogo.src}
+    awayLogo={SenegalLogo.src}
+  />
+</ArticleLayout>

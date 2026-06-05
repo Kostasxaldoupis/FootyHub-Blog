@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Navbar from "../components/Astro/Navbar.astro";
 
 interface Article {
   slug: string;
@@ -7,12 +8,30 @@ interface Article {
   date: string;
   description: string;
   author?: string;
-  pinned?: boolean; // Add this for pinned articles
-  tags?: string[]; // to search/filter
+  pinned?: boolean; 
+  tags?: string[]; 
 }
 
 // List articles here - newest first
 const articles: Article[] = [
+    {
+    slug: "4",
+    title: "World Cup Preview & My thoughts - 5/6/2026",
+    date: "2026-06-05",
+    description: "World Cup Preview",
+  },
+  {
+    slug: "3",
+    title: "Weekend Recap - May 18, 2026",
+    date: "2026-05-18",
+    description: "Weekend Recap",
+  },
+  {
+    slug: "2",
+    title: "Superb European Football Roundup - May 14, 2026",
+    date: "2026-05-14",
+    description: "Introduction",
+  },
   {
     slug: "intro",
     title: "Introduction",
@@ -20,27 +39,21 @@ const articles: Article[] = [
     description: "Introduction",
     pinned: true,
   },
-  {
-    slug: "test",
-    title: "Test",
-    description: "My first footbal artcle",
-    date: "2026-05-13",
-  },
 ];
 
 // Get all unique tags
-const allTags: string[] = [...new Set(articles.flatMap(article => article.tags || []))].sort();
-
+const allTags: string[] = [
+  ...new Set(articles.flatMap((article) => article.tags || [])),
+].sort();
 
 // Get current tag from URL (for filtering)
-const currentTag: string | null = Astro.url.searchParams.get('tag');
-
+const currentTag: string | null = Astro.url.searchParams.get("tag");
 
 // Filter articles by tag if one is selected
 let filteredArticles = [...articles];
 if (currentTag) {
-  filteredArticles = filteredArticles.filter((article: Article) => 
-    article.tags?.includes(currentTag)
+  filteredArticles = filteredArticles.filter((article: Article) =>
+    article.tags?.includes(currentTag),
   );
 }
 
@@ -70,26 +83,12 @@ function formatDate(dateString: string): string {
     <title>Football Blog</title>
   </head>
   <body>
+    <Navbar />
     <div class="container">
       <h1>⚽ Football Blog</h1>
       <div class="subtitle">
-        Match recaps from the top 5 leagues + other leagues around the world
+        Match recaps & football stories from across the globe
       </div>
-
-      <!-- Tag Filter Bar
-      <div class="tag-bar">
-        <a href="/" class={`tag ${!currentTag ? "active" : ""}`}> All Posts </a>
-        {
-          allTags.map((tag) => (
-            <a
-              href={`/?tag=${tag}`}
-              class={`tag ${currentTag === tag ? "active" : ""}`}
-            >
-              #{tag}
-            </a>
-          ))
-        }
-      </div> -->
 
       <!-- Show current filter indicator -->
       {
@@ -103,22 +102,26 @@ function formatDate(dateString: string): string {
         )
       }
 
-        <div class="articles">
-        {sortedArticles.map((article) => (
-            <div class={`article-card ${article.pinned ? 'pinned' : ''}`}>
-            {article.pinned && <div class="pinned-badge">📌 PINNED</div>}
-            <a href={`/articles/${article.slug}`}>{article.title}</a>
-            <div class="date">{formatDate(article.date)}</div>
-            {article.tags && article.tags.length > 0 && (
+      <div class="articles">
+        {
+          sortedArticles.map((article) => (
+            <div class={`article-card ${article.pinned ? "pinned" : ""}`}>
+              {article.pinned && <div class="pinned-badge">📌 PINNED</div>}
+              <a href={`/articles/${article.slug}`}>{article.title}</a>
+              <div class="date">{formatDate(article.date)}</div>
+              {article.tags && article.tags.length > 0 && (
                 <div class="article-tags">
-                {article.tags.map(tag => (
-                    <a href={`/?tag=${tag}`} class="article-tag">#{tag}</a>
-                ))}
+                  {article.tags.map((tag) => (
+                    <a href={`/?tag=${tag}`} class="article-tag">
+                      #{tag}
+                    </a>
+                  ))}
                 </div>
-            )}
+              )}
             </div>
-        ))}
-        </div>
+          ))
+        }
+      </div>
     </div>
   </body>
 </html>

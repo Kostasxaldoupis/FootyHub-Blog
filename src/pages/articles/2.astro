@@ -1,0 +1,303 @@
+---
+import Layout from "../../layouts/ArticleLayout.astro";
+import MatchCard from "../../components/React/MatchCard";
+
+// Spain
+import LaLigaLogo from "../../../public/competitions/LaLigaLogo.svg"
+import RealMadridLogo from "../../../public/teams/real-madrid.svg"
+import OviedoLogo from "../../../public/teams/oviedo.svg"
+
+// swiss league
+import SwissLeagueLogo from "../../../public/competitions/swissleague.svg"
+import ThunLogo from "../../../public/teams/fc-thun-logo.svg"
+import YoungBoys from "../../../public/teams/Young-Boys.svg"
+
+// Belgium
+import BelgianCupLogo from "../../../public/competitions/Belgium-Cup.svg"
+import UnionLogo from "../../../public/teams/union-saint-gilloise.svg"
+import AnderlechtLogo from "../../../public/teams/anderlecht.svg"
+
+
+// Denmark
+import DanishCupLogo from "../../../public/competitions/DBU_Pokalen.svg"
+import CopenhagenLogo from "../../../public/teams/FC-Copenhagen-1992.svg"
+import MidtjyllandLogo from "../../../public/teams/midtjylland.svg"
+
+// Sweden
+import SvenskaCupen from "../../../public/competitions/Svenska_Cupen_logo.svg"
+import MjallbyLogo from "../../../public/teams/Mjallby.svg"
+import HammarbyLogo from "../../../public/teams/hammarby.svg"
+
+---
+
+<Layout
+  title="European Football Roundup — May 14, 2026"
+  date="Invalid Date"
+  author="Your Name"
+  tags={[]}
+  pinned={false}
+>
+  <p>
+    Thursday brought a feast of football across Europe. Cup finals were settled,
+    a newly crowned champion was humiliated on their own pitch, underdogs made
+    history, and the biggest game of the night — Real Madrid vs Real Oviedo —
+    Here is everything you need to know.
+  </p>
+
+  <hr />
+
+  <!-- 1. REAL MADRID vs OVIEDO — PREVIEW -->
+  <h2>🇪🇸 La Liga — Matchday 36: Real Madrid vs Real Oviedo</h2>
+
+  <MatchCard
+    client:load
+    homeTeam="Real Madrid"
+    awayTeam="Real Oviedo"
+    homeScore={2}
+    awayScore={0}
+    competition="La Liga — Matchday 36"
+    competitionLogo={LaLigaLogo?.src || ""}
+    status="FT"
+    homeLogo={RealMadridLogo?.src || ""}
+    awayLogo={OviedoLogo?.src || ""}
+  />
+
+  <p>
+    Real Madrid secured a comfortable 2-0 victory over Real Oviedo at the
+    Santiago Bernabéu in their final home match of the La Liga season.
+  </p>
+
+  <p>
+    <strong>Jude Bellingham</strong> opened the scoring in the 34th minute with a
+    trademark late run into the box, calmly slotting home after a clever pass from
+    Federico Valverde. The English midfielder continues to be Madrid's most consistent
+    performer this campaign.
+  </p>
+
+  <p>
+    Academy graduate <strong>Gonzalo García</strong> doubled the lead in the 67th
+    minute, tapping in from close range after a deflected cross fell perfectly at
+    his feet. The 21-year-old impressed on what could be his final appearance for
+    the club before a potential loan move next season.
+  </p>
+
+  <p>
+    Veteran defender <strong>Dani Carvajal</strong> received a standing ovation as
+    he was substituted late in the second half, likely his final appearance at the
+    Bernabéu. The Spanish full-back has announced he will leave the club when his
+    contract expires this summer.
+  </p>
+
+  <p>
+    Real Oviedo fought hard but rarely threatened Madrid's defense. The visitors
+    remain in 17th place, just three points above the relegation zone with two
+    matches remaining.
+  </p>
+
+  <p>
+    <strong>Key stat:</strong> Jude Bellingham now has 22 league goals for the season
+    – the highest by a midfielder in Real Madrid's history.
+  </p>
+
+  <p>
+    <strong>Up next:</strong> Madrid travel to Athletic Bilbao on the final matchday,
+    while Oviedo face a must-win game against Getafe to secure their top-flight status.
+  </p>
+
+  <hr />
+
+  <!-- 2. SWISS SUPER LEAGUE: THUN 3-8 YOUNG BOYS -->
+  <h2>Swiss Super League: Thun Humiliated 3-8 at Home by Young Boys</h2>
+
+  <MatchCard
+    client:load
+    homeTeam="FC Thun"
+    awayTeam="Young Boys"
+    homeScore={3}
+    awayScore={8}
+    competition="Swiss Super League"
+    competitionLogo={SwissLeagueLogo?.src || ""}
+    status="FT"
+    homeLogo={ThunLogo?.src || ""}
+    awayLogo={YoungBoys?.src || ""}
+  />
+
+  <p>
+    Three days after lifting the Swiss Super League title, FC Thun were brought
+    crashing back to earth in the most brutal fashion. Young Boys ran riot at
+    the Stockhorn Arena, putting eight goals past a Thun side that looked
+    completely disorganised from the first whistle.
+  </p>
+
+  <p>
+    The damage was already done by half-time — Thun went in 1-5 down after a
+    horrific 45 minutes in which their defensive line was torn apart repeatedly.
+    The second half offered brief hope when Thun pulled it back to 3-5, but
+    Young Boys responded immediately and ran out comfortable winners.
+  </p>
+
+  <p>
+    For Thun, this result will sting. The celebrations from the title win were
+    still ringing around Bern when the goals started going in. For Young Boys,
+    it is a statement of intent ahead of their European qualification playoff
+    next month.
+  </p>
+
+  <ul>
+    <li>💥 12 goals conceded by Young Boys this season</li>
+    <li>😴 Clearly a title-hangover performance from the champions</li>
+    <li>📊 Young Boys: 5 goals scored before half-time</li>
+    <li>⚠️ Thun coach faces serious questions about squad mentality</li>
+  </ul>
+
+  <hr />
+
+  <!-- 3. BELGIAN CUP FINAL: UNION SG 3-1 ANDERLECHT (AET) -->
+  <h2>Belgian Cup Final: Union Saint-Gilloise Lift the Cup in Extra Time</h2>
+
+  <MatchCard
+    client:load
+    homeTeam="Union SG"
+    awayTeam="Anderlecht"
+    homeScore={3}
+    awayScore={1}
+    competition="Belgian Cup — Final"
+    competitionLogo={BelgianCupLogo?.src || ""}
+    status="AET"
+    homeLogo={UnionLogo?.src || ""}
+    awayLogo={AnderlechtLogo?.src || ""}
+  />
+
+  <p>
+    Union Saint-Gilloise are Belgian Cup winners. In a final that had everything
+    — tension, drama, and a comeback — they overcame their fiercest rivals
+    Anderlecht 3-1 after extra time at the King Baudouin Stadium in Brussels.
+  </p>
+
+  <p>
+    Anderlecht dominated the first half and took a deserved lead through a
+    clinical finish just before the break. Union came out a different side in
+    the second half — pressing higher, winning second balls, and forcing
+    Anderlecht onto the back foot. The equaliser came on 71 minutes and Union
+    never looked back.
+  </p>
+
+  <p>
+    Two goals in extra time sealed it. This is Union's second major trophy of
+    the season whilst they are battling for the Jupiler League title against
+    Club Brugge.They are firmly established as the dominant force in Belgian
+    football — something that would have seemed unthinkable just almost five
+    years ago when they were still in the second tier.
+  </p>
+
+  <ul>
+    <li>🏆 Union SG become Cup Champions for the fourth time.</li>
+    <li>😤 Anderlecht's wait for silverware continues into next season</li>
+    <li>🌟 Man of the Match: Anan Khalaili — tireless in the wings</li>
+  </ul>
+
+  <hr />
+
+  <!-- 4. DANISH CUP FINAL: COPENHAGEN 0-1 MIDTJYLLAND -->
+  <h2>🇩🇰 DBU Pokalen Final: Midtjylland Deny Copenhagen a Season to Forget</h2>
+
+  <MatchCard
+    client:load
+    homeTeam="FC Copenhagen"
+    awayTeam="FC Midtjylland"
+    homeScore={0}
+    awayScore={1}
+    competition="DBU Pokalen — Final"
+    competitionLogo={DanishCupLogo?.src || ""}
+    status="FT"
+    homeLogo={CopenhagenLogo?.src || ""}
+    awayLogo={MidtjyllandLogo?.src || ""}
+  />
+
+  <p>
+    If Copenhagen's league campaign was a disaster, losing the cup final to
+    Midtjylland is the full stop on one of their worst seasons in recent memory.
+    A single second-half goal from FC Midtjylland was enough to secure the DBU
+    Pokalen and rub salt into the wounds of a Copenhagen side that had nothing
+    left to play for but pride.
+  </p>
+
+  <p>
+    Copenhagen created very little all evening. Their top scorer has been out
+    injured since March, and the lack of creativity in the final third has been
+    a recurring theme all season. The atmosphere inside the stadium told its own
+    story — nervous, frustrated, and ultimately deflated.
+  </p>
+
+  <p>
+    Midtjylland, meanwhile, were compact, disciplined, and took their chance
+    when it came. They will head into next season's European qualifying rounds
+    with silverware and momentum.
+  </p>
+
+  <ul>
+    <li>
+      ❌ Copenhagen finish the season with zero trophies — first time in 6 years
+    </li>
+    <li>✅ Midtjylland win their 4th Danish Cup</li>
+    <li>🔄 Copenhagen's board expected to oversee a major summer rebuild</li>
+    <!-- <li>📉 Copenhagen scored just 3 goals across their last 7 games</li> -->
+  </ul>
+
+  <hr />
+
+  <!-- 5. SVENSKA CUPEN: MJÄLLBY 2-1 HAMMARBY -->
+  <h2>🇸🇪 Svenska Cupen: Mjällby Complete Stunning Double Over Hammarby</h2>
+
+  <MatchCard
+    client:load
+    homeTeam="Mjällby"
+    awayTeam="Hammarby"
+    homeScore={2}
+    awayScore={1}
+    competition="Svenska Cupen"
+    competitionLogo={SvenskaCupen?.src || ""}
+    status="FT"
+    homeLogo={MjallbyLogo?.src || ""}
+    awayLogo={HammarbyLogo?.src || ""}
+  />
+
+  <p>
+    The story of the Swedish football season. Mjällby AIF — a club from a town
+    of fewer than 10,000 people on the southern coast of Sweden — have now
+    beaten Hammarby twice in a single season, completing an unlikely double over
+    one of the country's most supported clubs.
+  </p>
+
+  <p>
+    Hammarby started the game as heavy favourites on their own turf and took the
+    lead in the first half. But Mjällby refused to be intimidated. They
+    equalised through a well-worked set piece and then scored what turned out to
+    be the winner with 20 minutes left — a moment that sent the travelling
+    Mjällby supporters into complete pandemonium.
+  </p>
+
+  <p>
+    For Hammarby, the questions will now come thick and fast. Beaten twice by
+    the same unfancied opponent in a season is hard to explain. The board will
+    demand answers from the coaching staff before the summer transfer window
+    opens.
+  </p>
+
+  <hr />
+
+  <h2>📋 Full Results at a Glance</h2>
+
+  <ul>
+    <li>🇪🇸 Real Madrid 2-0 Real Oviedo — <strong>Full Time</strong></li>
+    <li>🇨🇭 FC Thun 3-8 Young Boys — <strong>Full Time</strong></li>
+    <li>🇧🇪 Union SG 3-1 Anderlecht — <strong>Full Time (AET)</strong></li>
+    <li>🇩🇰 FC Copenhagen 0-1 FC Midtjylland — <strong>Full Time</strong></li>
+    <li>🇸🇪 Mjällby 2-1 Hammarby — <strong>Full Time</strong></li>
+  </ul>
+
+  <p>
+    A brilliant day of football across the continent. More European coverage
+    coming soon.
+  </p>
+</Layout>

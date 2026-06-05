@@ -1,0 +1,180 @@
+---
+import "../../styles/global.css";
+---
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-icon">⚽</span>
+      <span class="nav-logo-text">Football Blog</span>
+    </a>
+    
+    <button class="nav-mobile-btn" id="mobileMenuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/about" class="nav-link">About</a></li>
+      <li><a href="/privacy" class="nav-link">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
+  
+  mobileBtn?.addEventListener('click', () => {
+    navLinks?.classList.toggle('active');
+    mobileBtn.classList.toggle('active');
+  });
+</script>
+
+<style>
+  .navbar {
+    background: #0a1928;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(10, 25, 40, 0.95);
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-logo:hover {
+    color: #93c5fd;
+  }
+  
+  .nav-logo-icon {
+    font-size: 1.5rem;
+  }
+  
+  .nav-logo-text {
+    background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-link:hover {
+    color: #93c5fd;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3b82f6;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Mobile menu button */
+  .nav-mobile-btn {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  .nav-mobile-btn span {
+    width: 25px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-mobile-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  
+  .nav-mobile-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-mobile-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .nav-mobile-btn {
+      display: flex;
+    }
+    
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #0a1928;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid rgba(59, 130, 246, 0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-links.active {
+      display: flex;
+    }
+    
+    .nav-link {
+      padding: 1rem 1.5rem;
+      display: block;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+    }
+    
+    .nav-link::after {
+      display: none;
+    }
+  }
+</style>

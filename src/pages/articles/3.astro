@@ -1,0 +1,532 @@
+---
+// Main imports
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import Navbar from "../../components/Astro/Navbar.astro";
+import MatchCard from "../../components/React/MatchCard";
+import "../../styles/global.css";
+
+// Import Logos
+
+// England
+import PremierLeague from "../../../public/competitions/Premier-League.svg";
+import ManUTDLogo from "../../../public/teams/ManUTD.svg";
+import NottmForestLogo from "../../../public/teams/NottmForest.svg";
+
+// spain
+import LaLigaLogo from "../../../public/competitions/LaLigaLogo.svg";
+import AtleticoLogo from "../../../public/teams/AtleticoLogo.svg";
+import GironaLogo from "../../../public/teams/GironaLogo.svg";
+import SociedadLogo from "../../../public/teams/SociedadLogo.svg";
+import ValenciaLogo from "../../../public/teams/ValenciaLogo.svg";
+import SevillaLogo from "../../../public/teams/ValenciaLogo.svg";
+import RealMadridLogo from "../../../public/teams/real-madrid.svg";
+
+// Italy
+import SerieA from "../../../public/competitions/Serie-A.svg";
+import ComoLogo from "../../../public/teams/Como.svg";
+import ParmaLogo from "../../../public/teams/Parma.svg";
+import GenoaLogo from "../../../public/teams/Genoa.svg";
+import MilanLogo from "../../../public/teams/Milan.svg";
+import JuventusLogo from "../../../public/teams/Juventus.svg";
+import FiorentinaLogo from "../../../public/teams/Fiorentina.svg";
+import PisaLogo from "../../../public/teams/Pisa.svg";
+import NapoliLogo from "../../../public/teams/Napoli.svg";
+import RomaLogo from "../../../public/teams/Roma.svg";
+import LazioLogo from "../../../public/teams/Lazio.svg";
+import InterLogo from "../../../public/teams/Inter.svg";
+import HellasVeronaLogo from "../../../public/teams/Verona.svg";
+import AtalantaLogo from "../../../public/teams/Atalanta.svg";
+import BolognaLogo from "../../../public/teams/Bologna.svg";
+
+// Germany
+import BundesligaLogo from "../../../public/competitions/BundesligaLogo.svg";
+import LeverkusenLogo from "../../../public/teams/Leverkusen.svg";
+import HSVlogo from "../../../public/teams/HSV.svg";
+import BayernLogo from "../../../public/teams/Bayern-Munich.svg";
+import KolnLogo from "../../../public/teams/Koln.svg";
+import FreiburgLogo from "../../../public/teams/Freiburg.svg";
+import LeipzigLogo from "../../../public/teams/Leipzig.svg";
+import BremenLogo from "../../../public/teams/Werder-Bremen.svg";
+import DortmundLogo from "../../../public/teams/Dortmund.svg";
+
+// France
+import Ligue1Logo from "../../../public/competitions/Ligue1Logo.svg";
+import LilleLogo from "../../../public/teams/LilleLogo.svg";
+import AuxerreLogo from "../../../public/teams/AuxerreLogo.svg";
+import LyonLogo from "../../../public/teams/LyonLogo.svg";
+import LensLogo from "../../../public/teams/LensLogo.svg";
+import MarseilleLogo from "../../../public/teams/MarseilleLogo.svg";
+import RennesLogo from "../../../public/teams/RennesLogo.svg";
+import ParisLogo from "../../../public/teams/ParisLogo.svg";
+import PSGLogo from "../../../public/teams/PSGLogo.svg";
+import StrasbourgLogo from "../../../public/teams/StrasbourgLogo.svg";
+import MonacoLogo from "../../../public/teams/MonacoLogo.svg";
+---
+
+<ArticleLayout
+  title="Weekend Recap — May 18, 2026"
+  date="May 18, 2026"
+  author="Konstantinos Chaldoupis"
+  tags={[
+    "weekend-recap",
+    "premier-league",
+    "laliga",
+    "serie-a",
+    "bundesliga",
+    "ligue-1",
+  ]}
+>
+  <!-- Simple Navigation -->
+  <div
+    style="background: #1e293b; padding: 1rem; border-radius: 12px; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;"
+  >
+    <a href="#premier-league" style="color: #93c5fd; text-decoration: none;"
+      >Premier League</a
+    >
+    <span style="color: #475569;">|</span>
+    <a href="#laliga" style="color: #93c5fd; text-decoration: none;">La Liga</a>
+    <span style="color: #475569;">|</span>
+    <a href="#serie-a" style="color: #93c5fd; text-decoration: none;">Serie A</a
+    >
+    <span style="color: #475569;">|</span>
+    <a href="#bundesliga" style="color: #93c5fd; text-decoration: none;"
+      >Bundesliga</a
+    >
+    <span style="color: #475569;">|</span>
+    <a href="#ligue-1" style="color: #93c5fd; text-decoration: none;">Ligue 1</a
+    >
+  </div>
+
+  <!-- Premier League -->
+  <h2 id="premier-league">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League: Matchday 37</h2>
+
+  <p>
+    Manchester United secured a commanding victory over Nottingham Forest,
+    taking an early lead through <strong>Luke Shaw</strong> and maintaining their
+    advantage until halftime. Forest briefly threatened after the break when Morato
+    pulled one back in the 53rd minute, but United responded emphatically. <strong
+      >Matheus Cunha</strong
+    > swiftly restored the lead for the Red Devils before <strong
+      >Bryan Mbeumo</strong
+    > added a third in the 76th minute to seal the win. Adding to the celebration,
+    <strong>Bruno Fernandes</strong> equalled the all-time Premier League assist record
+    for a single season during the match.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Manchester United"
+    awayTeam="Nottingham Forest"
+    homeScore={3}
+    awayScore={1}
+    competition="Premier League — Matchday 37"
+    competitionLogo={PremierLeague?.src || ""}
+    status="FT"
+    homeLogo={ManUTDLogo?.src || ""}
+    awayLogo={NottmForestLogo?.src || ""}
+  />
+
+  <hr />
+
+  <!-- La Liga -->
+  <h2 id="laliga">La Liga: Matchday 38</h2>
+
+  <p>
+    <strong>Atletico Madrid 1-0 Girona:</strong> A tight contest decided by a late
+    winner as Atletico secured all three points at home.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Atletico Madrid"
+    awayTeam="Girona"
+    homeScore={1}
+    awayScore={0}
+    competition="LaLiga — Matchday 38"
+    competitionLogo={LaLigaLogo?.src || ""}
+    status="FT"
+    homeLogo={AtleticoLogo?.src || ""}
+    awayLogo={GironaLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Real Sociedad 3-4 Valencia:</strong> A seven-goal thriller! Valencia snatched
+    victory in stoppage time after Sociedad had fought back from 3-1 down.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Real Sociedad"
+    awayTeam="Valencia"
+    homeScore={3}
+    awayScore={4}
+    competition="LaLiga — Matchday 38"
+    competitionLogo={LaLigaLogo?.src || ""}
+    status="FT"
+    homeLogo={SociedadLogo?.src || ""}
+    awayLogo={ValenciaLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Sevilla 0-1 Real Madrid:</strong> A gritty away performance from Madrid
+    as they edged past Sevilla with a second-half goal.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Sevilla"
+    awayTeam="Real Madrid"
+    homeScore={0}
+    awayScore={1}
+    competition="LaLiga — Matchday 38"
+    competitionLogo={LaLigaLogo?.src || ""}
+    status="FT"
+    homeLogo={SevillaLogo?.src || ""}
+    awayLogo={RealMadridLogo?.src || ""}
+  />
+
+  <hr />
+
+  <!-- Serie A -->
+  <h2 id="serie-a">Serie A: Matchday 38</h2>
+
+  <p>
+    <strong>Como 1-0 Parma:</strong> A hard-fought home victory as Como secured their
+    top-flight status.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Como"
+    awayTeam="Parma"
+    homeScore={1}
+    awayScore={0}
+    competition="Serie A — Matchday 38"
+    competitionLogo={SerieA?.src || ""}
+    status="FT"
+    homeLogo={ComoLogo?.src || ""}
+    awayLogo={ParmaLogo?.src || ""}
+  />
+
+  <hr />
+
+  <p>
+    <strong>Genoa 1-2 Milan:</strong> Milan came from behind to snatch a crucial away
+    win in their European push.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Genoa"
+    awayTeam="Milan"
+    homeScore={1}
+    awayScore={2}
+    competition="Serie A — Matchday 38"
+    competitionLogo={SerieA?.src || ""}
+    status="FT"
+    homeLogo={GenoaLogo?.src || ""}
+    awayLogo={MilanLogo?.src || ""}
+  />
+
+  <hr />
+
+  <p>
+    <strong>Juventus 0-2 Fiorentina:</strong> A stunning away performance from Fiorentina
+    stunned the home crowd in Turin.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Juventus"
+    awayTeam="Fiorentina"
+    homeScore={0}
+    awayScore={2}
+    competition="Serie A — Matchday 38"
+    competitionLogo={SerieA?.src || ""}
+    status="FT"
+    homeLogo={JuventusLogo?.src || ""}
+    awayLogo={FiorentinaLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Pisa 0-3 Napoli:</strong> Napoli cruised to an easy victory as they continue
+    their impressive form.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Pisa"
+    awayTeam="Napoli"
+    homeScore={0}
+    awayScore={3}
+    competition="Serie A — Matchday 38"
+    competitionLogo={SerieA?.src || ""}
+    status="FT"
+    homeLogo={PisaLogo?.src || ""}
+    awayLogo={NapoliLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Roma 2-0 Lazio:</strong> The Derby della Capitale belonged to Roma as
+    they dominated their city rivals.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Roma"
+    awayTeam="Lazio"
+    homeScore={2}
+    awayScore={0}
+    competition="Serie A — Matchday 38"
+    competitionLogo={SerieA?.src || ""}
+    status="FT"
+    homeLogo={RomaLogo?.src || ""}
+    awayLogo={LazioLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Inter 1-0 Verona:</strong> A narrow win for the Nerazzurri as they keep
+    pressure on the title race.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Inter"
+    awayTeam="Verona"
+    homeScore={1}
+    awayScore={0}
+    competition="Serie A — Matchday 38"
+    competitionLogo={SerieA?.src || ""}
+    status="FT"
+    homeLogo={InterLogo?.src || ""}
+    awayLogo={HellasVeronaLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Atalanta vs Bologna:</strong> A crucial match for European qualification
+    - both teams looking for points.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Atalanta"
+    awayTeam="Bologna"
+    homeScore={0}
+    awayScore={0}
+    competition="Serie A — Matchday 38"
+    competitionLogo={SerieA?.src || ""}
+    status="UPCOMING"
+    homeLogo={AtalantaLogo?.src || ""}
+    awayLogo={BolognaLogo?.src || ""}
+  />
+
+  <!-- Bundesliga -->
+  <h2 id="bundesliga">Bundesliga: Matchday 34</h2>
+
+  <p>
+    <strong>Leverkusen 1-1 HSV:</strong> The champions dropped points in a hard-fought
+    draw against Hamburg.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Leverkusen"
+    awayTeam="HSV"
+    homeScore={1}
+    awayScore={1}
+    competition="Bundesliga — Matchday 34"
+    competitionLogo={BundesligaLogo?.src || ""}
+    status="FT"
+    homeLogo={LeverkusenLogo?.src || ""}
+    awayLogo={HSVlogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Bayern München 5-1 Köln:</strong> A dominant display from Bayern as they
+    ended the season in style.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Bayern München"
+    awayTeam="Köln"
+    homeScore={5}
+    awayScore={1}
+    competition="Bundesliga — Matchday 34"
+    competitionLogo={BundesligaLogo?.src || ""}
+    status="FT"
+    homeLogo={BayernLogo?.src || ""}
+    awayLogo={KolnLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Freiburg 4-1 RB Leipzig:</strong> A stunning performance from Freiburg
+    as they dismantled Leipzig at home.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Freiburg"
+    awayTeam="RB Leipzig"
+    homeScore={4}
+    awayScore={1}
+    competition="Bundesliga — Matchday 34"
+    competitionLogo={BundesligaLogo?.src || ""}
+    status="FT"
+    homeLogo={FreiburgLogo?.src || ""}
+    awayLogo={LeipzigLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Werder Bremen 0-2 Dortmund:</strong> Dortmund secured a comfortable away
+    victory to finish the season strongly.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Werder Bremen"
+    awayTeam="Dortmund"
+    homeScore={0}
+    awayScore={2}
+    competition="Bundesliga — Matchday 34"
+    competitionLogo={BundesligaLogo?.src || ""}
+    status="FT"
+    homeLogo={BremenLogo?.src || ""}
+    awayLogo={DortmundLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <!-- Ligue 1 -->
+  <h2 id="ligue-1">🇫🇷 Ligue 1: Matchday 34</h2>
+
+  <p>
+    <strong>Lille 0-2 Auxerre:</strong> Auxerre pulled off a surprise away victory
+    against the European chasers.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Lille"
+    awayTeam="Auxerre"
+    homeScore={0}
+    awayScore={2}
+    competition="Ligue 1 — Matchday 34"
+    competitionLogo={Ligue1Logo?.src || ""}
+    status="FT"
+    homeLogo={LilleLogo?.src || ""}
+    awayLogo={AuxerreLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Lyon 0-4 Lens:</strong> Lens put on a clinic with a dominant away performance
+    against Lyon.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Lyon"
+    awayTeam="Lens"
+    homeScore={0}
+    awayScore={4}
+    competition="Ligue 1 — Matchday 34"
+    competitionLogo={Ligue1Logo?.src || ""}
+    status="FT"
+    homeLogo={LyonLogo?.src || ""}
+    awayLogo={LensLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Marseille 3-1 Rennes:</strong> Marseille secured an important win in front
+    of their home fans.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Marseille"
+    awayTeam="Rennes"
+    homeScore={3}
+    awayScore={1}
+    competition="Ligue 1 — Matchday 34"
+    competitionLogo={Ligue1Logo?.src || ""}
+    status="FT"
+    homeLogo={MarseilleLogo?.src || ""}
+    awayLogo={RennesLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Paris FC 2-1 PSG:</strong> SHOCK OF THE SEASON! Paris FC stunned their
+    famous neighbours with a late-goal derby victory.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Paris FC"
+    awayTeam="PSG"
+    homeScore={2}
+    awayScore={1}
+    competition="Ligue 1 — Matchday 34"
+    competitionLogo={Ligue1Logo?.src || ""}
+    status="FT"
+    homeLogo={ParisLogo?.src || ""}
+    awayLogo={PSGLogo?.src || ""}
+  />
+
+  <hr />
+  <br />
+
+  <p>
+    <strong>Strasbourg 5-4 Monaco:</strong> NINE GOALS! An absolute thriller in Strasbourg
+    as they edged Monaco in a goal-fest.
+  </p>
+
+  <MatchCard
+    client:load
+    homeTeam="Strasbourg"
+    awayTeam="Monaco"
+    homeScore={5}
+    awayScore={4}
+    competition="Ligue 1 — Matchday 34"
+    competitionLogo={Ligue1Logo?.src || ""}
+    status="FT"
+    homeLogo={StrasbourgLogo?.src || ""}
+    awayLogo={MonacoLogo?.src || ""}
+  />
+</ArticleLayout>

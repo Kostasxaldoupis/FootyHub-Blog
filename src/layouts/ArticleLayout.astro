@@ -1,4 +1,6 @@
 ---
+import Navbar from "../components/Astro/Navbar.astro";
+
 const { title, date, author, tags } = Astro.props;
 ---
 
@@ -57,14 +59,15 @@ const { title, date, author, tags } = Astro.props;
       }
 
       h2 {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Color Emoji", "Apple Color Emoji", sans-serif;
         color: #93c5fd;
         margin: 1.5rem 0 0.75rem 0;
         border-left: 3px solid #3b82f6;
         padding-left: 1rem;
       }
 
-      p {
-        margin-bottom: 1rem;
+      :global(article p) {
+        margin-bottom: 1.5rem;
       }
 
       a {
@@ -291,24 +294,14 @@ const { title, date, author, tags } = Astro.props;
         }
       }
     </style>
+
   </head>
   <body>
+    <Navbar/>
     <div class="container">
       <a href="/" class="back-link">← Back to all articles</a>
 
       <div class="article-header">
-        {
-          tags && tags.length > 0 && (
-            <div class="article-tags-section">
-              {tags.map((tag) => (
-                <a href={`/?tag=${tag}`} class="article-tag-link">
-                  #{tag}
-                </a>
-              ))}
-            </div>
-          )
-        }
-
         <h1>{title}</h1>
         <div class="meta">
           {date && <span>📅 {date}</span>}
@@ -318,7 +311,8 @@ const { title, date, author, tags } = Astro.props;
 
       <article>
         <slot />
-      </article>
+      <article>
+
     </div>
   </body>
 </html>

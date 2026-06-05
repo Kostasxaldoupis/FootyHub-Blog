@@ -27,6 +27,21 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
+h2 {
+  margin-top: 2.5rem;  /* Space above each h2 heading */
+  margin-bottom: 1rem;
+  color: #93c5fd;
+  border-left: 3px solid #3b82f6;
+  padding-left: 1rem;
+}
+
+p + h2,
+ul + h2,
+.match-card-modern + h2 {
+  margin-top: 3rem;
+}
+
+
 .subtitle {
   color: #94a3b8;
   margin-bottom: 3rem;
@@ -76,7 +91,7 @@ h1 {
   background: #18181b;
   border-radius: 16px;
   padding: 1.25rem;
-  margin: 1.5rem 0;
+  margin: 2rem 0;  
   border: 1px solid rgba(63, 63, 70, 0.5);
   transition: all 0.2s ease;
 }
@@ -103,6 +118,7 @@ h1 {
   letter-spacing: 0.5px;
 }
 
+/* Status badges */
 .status {
   font-size: 0.7rem;
   padding: 0.25rem 0.6rem;
@@ -116,6 +132,18 @@ h1 {
   background: #ef4444;
   color: white;
   animation: pulse 1.5s infinite;
+}
+
+.status.upcoming {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Optional: Add a subtle glow for upcoming matches */
+.status.upcoming {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
 }
 
 .match-body {
@@ -141,9 +169,11 @@ h1 {
 }
 
 .team-logo-modern {
+  background: transparent !important;
   width: 50px;
   height: 50px;
 }
+
 
 .team-name-modern {
   font-size: 0.85rem;

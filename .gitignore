@@ -31,3 +31,6 @@ pnpm-debug.log*
 
 # Optional: local emulator data
 firebase-debug.log*
+firebase.json
+
+ads.txt
